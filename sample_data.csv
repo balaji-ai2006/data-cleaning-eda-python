@@ -1,0 +1,34 @@
+employee_id,name,age,gender,department,salary,join_date,years_of_experience,performance_score,remote_worker
+EMP001,John Doe,29,Male,Engineering,"$75,000",2020-03-15,4,85,True
+EMP002,Jane Smith,34,F,Marketing,"$82,000",2018-07-22,8,92,FALSE
+EMP003,Robert Brown,250,Male,Sales,"$61,000",2022-01-10,2,-15,No
+EMP004,Emily Davis,28,Female,Human Resources,"$58,000",15/04/2021,5,78,Yes
+EMP005,Michael Wilson,,M,Engineering,"$105,000",2016-11-01,11,88,1
+EMP006,Sarah Taylor,31,female,Finance,"$95,000.50",2019-09-18,7,90,0
+EMP007,David Anderson,-5,M,Sales,"-$45,000",2023-02-01,1,65,False
+EMP008,Jessica Thomas,42,Female,Humman Resources,"$72,000",2015-05-30,15,82,Yes
+EMP009,James Jackson,36,Male,Finance,"$88,000",2017-08-14,9,95,True
+EMP010,Patricia White,29,F,Marketing,"Unknown",2021-12-05,4,74,False
+EMP011,Christopher Harris,22,Male,Engineering,"$70,000",2022-06-20,65,80,True
+EMP012,Linda Martin,45,Female,HR,"$110,000",2013-04-12,18,91,No
+EMP013,Daniel Lee,33,M,IT,"$92,000",2019-10-15,-3,84,Yes
+EMP014,Matthew King,38,Male,Finance,"$25,000,000",2017-03-25,12,999,True
+EMP015,Barbara Wright,,Female,Engineering,"$85,000",05-18-2020,6,86,False
+EMP016,Anthony Scott,27,M,Sales,"$63,000",2021-08-11,3,79,1
+EMP017,Mark Robinson,30,Male,IT,"N/A",invalid_date,4,81,0
+EMP018,Elizabeth Clark,39,Female,Marketing,"$91,000",2016-02-19,13,89,True
+EMP019,Andrew Lewis,thirty,Male,Engineering,"$78,000",2020-10-08,5,83,False
+EMP020,Joshua Young,41,M,Finance,"$102,000",2014-06-01,14,93,Yes
+EMP001,John Doe,29,Male,Engineering,"$75,000",2020-03-15,4,85,True
+EMP021,Kevin Hall,26,Male,Sales,"$59,000",2022-09-17,2,71,No
+EMP022,Brian Allen,35,M,IT,"$89,000",2018-05-23,9,87,True
+EMP023,Mary Green,48,Female,Finance,"$115,000",2012-01-30,20,94,False
+EMP024,Edward Adams,,?,Marketing,"$67,000",2021-04-14,3,76,Unknown
+EMP025,Ronald Baker,32,Male,Engineering,"$84,000",2019-12-03,7,88,Yes
+EMP026,Timothy Nelson,29,M,IT,"$76,000",2020-07-29,4,82,False
+EMP006,Sarah Taylor,31,female,Finance,"$95,000.50",2019-09-18,7,90,0
+EMP027,Jason Carter,52,Male,HR,"$120,000",2010-09-15,25,96,No
+EMP028,Jeffrey Mitchell,37,Male,Engineering,"$98,000",2016-10-10,10,89,True
+EMP029,Ryan Perez,24,M,Sales,"$55,000",2023-05-02,1,68,Yes
+EMP030,Gary Roberts,44,Male,Finance,"$108,000",2014-11-20,16,92,False
+EMP030,Gary Roberts,44,Male,Finance,"$108,000",2014-11-20,16,92,False
