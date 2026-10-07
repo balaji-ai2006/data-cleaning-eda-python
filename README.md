@@ -12,13 +12,15 @@ A robust, end-to-end data cleaning, preprocessing, and exploratory data analysis
 
 ## Table of Contents
 1. [Project Overview](#project-overview)
-2. [Repository Structure](#repository-structure)
-3. [Environment Setup & Installation](#environment-setup--installation)
-4. [The Data Cleaning Pipeline](#the-data-cleaning-pipeline)
-5. [Exploratory Data Analysis & Key Findings](#exploratory-data-analysis--key-findings)
-6. [Visualizations Showcase](#visualizations-showcase)
-7. [How to Run](#how-to-run)
-8. [License](#license)
+2. [Interactive Web Studio](#interactive-web-studio)
+3. [Repository Structure](#repository-structure)
+4. [Environment Setup & Installation](#environment-setup--installation)
+5. [The Data Cleaning Pipeline](#the-data-cleaning-pipeline)
+6. [Exploratory Data Analysis & Key Findings](#exploratory-data-analysis--key-findings)
+7. [Visualizations Showcase](#visualizations-showcase)
+8. [How to Run](#how-to-run)
+9. [Deployment Options](#deployment-options)
+10. [License](#license)
 
 ---
 
@@ -31,7 +33,22 @@ Raw data collected from production systems, forms, or legacy databases is almost
 - **Outliers & Logical Inconsistencies**: Impossible ages (`250`, `-5`), negative salaries (`-$45,000`), multimillion executive outliers (`$25,000,000`), and work experience greater than employee age.
 - **Categorical Discrepancies**: Shorthand codes (`"M"`, `"F"`), inconsistent casing (`"female"`, `"Female"`), and typos (`"Humman Resources"`, `"HR"`).
 
-The project implements a reproducible workflow in both modular Python scripts and an interactive Jupyter Notebook.
+The project implements a reproducible workflow in modular Python scripts, an interactive Jupyter Notebook, and a full-featured **Streamlit Web Application** ready for 1-click cloud deployment.
+
+---
+
+## Interactive Web Studio
+
+The repository includes a web dashboard (`app.py`) allowing you to:
+- **Test with Built-in or Custom CSVs**: Upload your own raw dataset or use the included workforce data.
+- **Real-Time Data Sanitization**: View live before vs. after diagnostics, missing value distributions, and transformation audit logs.
+- **Interactive Visualizations**: Dynamic Plotly charts for distribution analysis, box plots, departmental salary breakdowns, and correlation heatmaps.
+- **One-Click Export**: Download the sanitized dataset (`cleaned_data.csv`) and automated Markdown audit reports.
+
+Launch locally with:
+```bash
+streamlit run app.py
+```
 
 ---
 
@@ -40,11 +57,19 @@ The project implements a reproducible workflow in both modular Python scripts an
 ```text
 data-cleaning-eda-python/
 │
-├── .gitignore                     # Git configuration ignoring venvs, caches, checkpoints
-├── requirements.txt               # Required dependencies (pandas, numpy, seaborn, etc.)
+├── .streamlit/                    # Streamlit UI theme and server configuration
+│   └── config.toml
+├── .dockerignore                  # Docker build exclusions
+├── Dockerfile                     # Production container specification
+├── docker-compose.yml             # Single-command local container setup
+├── render.yaml                    # 1-click Render.com deployment blueprint
+├── DEPLOYMENT.md                  # Comprehensive cloud deployment instructions
+│
+├── requirements.txt               # Dependencies (pandas, streamlit, plotly, seaborn, etc.)
 ├── sample_data.csv                # Raw dataset with intentional flaws and outliers
 ├── cleaned_data.csv               # Sanitized, imputed, and validated dataset
 │
+├── app.py                         # Interactive Streamlit Web Studio
 ├── data_cleaning.py               # Standalone automated cleaning script
 ├── data_visualization.py          # Script generating publication-ready charts (300 DPI)
 ├── eda_analysis.ipynb             # Full, end-to-end interactive Jupyter Notebook
@@ -169,25 +194,53 @@ All visual assets are generated with 300 DPI resolution and saved under `plots/`
 
 ## How to Run
 
-### Run the Data Cleaning Pipeline
+### 1. Launch the Interactive Web Dashboard (Recommended)
+```powershell
+streamlit run app.py
+```
+*Opens an interactive visual studio in your browser where you can inspect anomalies, execute cleaning stages, explore charts, and export results.*
+
+### 2. Run the Data Cleaning Pipeline CLI
 ```powershell
 python data_cleaning.py
 ```
 *Outputs detailed terminal logging of every transformation step and generates `cleaned_data.csv`.*
 
-### Generate the Visualizations
+### 3. Generate the High-Resolution Figures
 ```powershell
 python data_visualization.py
 ```
-*Renders and saves all 5 figures into the `plots/` directory.*
+*Renders and saves all 5 figures (300 DPI) into the `plots/` directory.*
 
-### Launch the Jupyter Notebook
+### 4. Launch the Jupyter Notebook
 ```powershell
 jupyter lab
 # or
 jupyter notebook
 ```
 *Open `eda_analysis.ipynb` to view interactive code executions, formatted DataFrames, and rendered charts.*
+
+---
+
+## Deployment Options
+
+This project is configured for multi-cloud deployment:
+
+1. **Streamlit Community Cloud (Free & 1-Click)**:
+   - Connect repository `balaji-ai2006/data-cleaning-eda-python` at [share.streamlit.io](https://share.streamlit.io).
+   - Set main file path: `app.py`.
+   - Free hosted web app with automatic continuous deployment on git push!
+
+2. **Render**:
+   - Blueprint configuration included in [`render.yaml`](render.yaml).
+
+3. **Docker**:
+   ```bash
+   docker build -t eda-studio .
+   docker run -p 8501:8501 eda-studio
+   ```
+
+*For complete step-by-step instructions across all platforms, see [DEPLOYMENT.md](DEPLOYMENT.md).*
 
 ---
 
